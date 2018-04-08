@@ -1,9 +1,14 @@
 'use strict';
 const util = require('util');
 const restify = require('restify');
+const serverURL = 'https://obscure-waters-88720.herokuapp.com';
+
+if(process.env.ENV==='DEV'){
+    serverURL = 'https://localhost:' + process.env.PORT;
+}
 
 var client = restify.createJsonClient({
-    url: 'https://obscure-waters-88720.herokuapp.com' + process.env.PORT,
+    url: serverURL,
     version: '*'
 });
 
