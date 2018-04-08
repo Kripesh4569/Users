@@ -133,7 +133,7 @@ server.get('/list', (req, res, next) => {
         });
 });
 
-server.listen(process.env.PORT, "localhost", function () {
+server.listen(process.env.PORT || 3000, function () {
     log(server.name + ' listening at ' + server.url);
 });
 // Mimic API Key authentication.

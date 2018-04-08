@@ -4,7 +4,7 @@
   "description": "This package is a microservice for user authentication.",
   "main": "user-server.js",
   "scripts": {
-    "start": "DEBUG=users:* PORT=3333 SEQUELIZE_CONNECT=sequelize-postgres-heroku.yaml node user-server",
+    "start": "DEBUG=users:* SEQUELIZE_CONNECT=sequelize-postgres-heroku.yaml node user-server",
     "start-dev": "DEBUG=users:* PORT=3333 SEQUELIZE_CONNECT=sequelize-postgres.yaml node user-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

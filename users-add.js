@@ -3,7 +3,7 @@ const util = require('util');
 const restify = require('restify');
 
 var client = restify.createJsonClient({
-    url: 'http://localhost:' + process.env.PORT,
+    url: 'https://obscure-waters-88720.herokuapp.com' + process.env.PORT,
     version: '*'
 });
 
