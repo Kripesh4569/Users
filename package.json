@@ -1,0 +1,20 @@
+{
+  "name": "user-auth-server",
+  "version": "1.0.0",
+  "description": "This package is a microservice for user authentication.",
+  "main": "user-server.js",
+  "scripts": {
+    "start": "DEBUG=users:* PORT=3333 SEQUELIZE_CONNECT=sequelize-postgres.yaml node user-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kripesh Dhakal",
+  "license": "ISC",
+  "dependencies": {
+    "debug": "^2.6.9",
+    "js-yaml": "^3.11.0",
+    "pg": "^6.4.1",
+    "pg-hstore": "^2.3.2",
+    "restify": "^4.3.2",
+    "sequelize": "^3.32.1"
+  }
+}
