@@ -38,19 +38,25 @@ exports.connectDB = function () {
 };
 
 
-exports.create = function (username, password, provider, familyName,
+exports.create = function (secret, username, password, provider, familyName,
     givenName, middleName, emails, photos) {
-    return exports.connectDB().then(SQUser => {
-        return SQUser.create({
-            username: username,
-            password: password,
-            provider: provider,
-            familyName: familyName,
-            givenName: givenName,
-            middleName: middleName,
-            emails: JSON.stringify(emails),
-            photos: JSON.stringify(photos)
+    if (secret === 'Godey') {
+        return exports.connectDB().then(SQUser => {
+            return SQUser.create({
+                username: username,
+                password: password,
+                provider: provider,
+                familyName: familyName,
+                givenName: givenName,
+                middleName: middleName,
+                emails: JSON.stringify(emails),
+                photos: JSON.stringify(photos)
+            });
         });
+    }
+    else
+    return new Promise ((resolve, reject) => {
+        resolve ({err: "Ask Kripesh for the Secret"});
     });
 };
 

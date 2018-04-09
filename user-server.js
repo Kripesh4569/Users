@@ -19,12 +19,11 @@ server.use(restify.bodyParser({
 
 // Create a user record
 server.post('/create-user', (req, res, next) => {
-    // console.log(req.params.username + ' ' + req.params.password + ' ' + req.params.provider + ' ' + req.params.lastName + ' ' +
+    // console.log(req.params.secret + ' ' + req.params.username + ' ' + req.params.password + ' ' + req.params.provider + ' ' + req.params.lastName + ' ' +
     //     req.params.givenName + ' ' + req.params.middleName + ' ' +
     //     req.params.emails + ' ' +
-    //     req.params.photos)
-
-    usersModel.create(req.params.username, req.params.password,
+    //     req.params.photos);
+    usersModel.create(req.params.secret, req.params.username, req.params.password,
         req.params.provider, req.params.lastName,
         req.params.givenName, req.params.middleName,
         req.params.emails,
